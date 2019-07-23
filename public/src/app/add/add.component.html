@@ -1,0 +1,29 @@
+<div class="main">
+    <h2>Know of a pet needing a home?</h2>
+
+        <form (submit)="onAdd(newPet)">
+        <p>Pet name:</p>
+        <span class=" validation" *ngIf="name.pristine==false && name.errors">Please enter a valid pet name with at least 3 characters</span>
+        <p class="validation" >{{errors?.name?.message}}</p>
+        <input type="text" class="form-control" name="newPet.name" required minlength="3" [(ngModel)]="newPet.name" #name="ngModel">
+        <p>Pet type:</p>
+        <p class="validation" >{{errors?.type?.message}}</p>        
+        <span class=" validation" *ngIf="type.pristine==false && type.errors">Please enter a pet type with at least 3 characters</span>
+        <input type="text" class="form-control" name="newPet.type" required minlength="3" [(ngModel)]="newPet.type"#type="ngModel">
+        <p>Description:</p>
+        <p class="validation" >{{errors?.description?.message}}</p>
+        <span class=" validation" *ngIf="description.pristine==false && description.errors">Please enter a description with at least 3 characters</span>
+        <input type="text" class="form-control" name="newPet.description" required minlength="3"[(ngModel)]="newPet.description"  #description="ngModel">
+        <p>Skills</p>
+        <ul>
+            <li><span>Skill 1:</span>        <input type="text" class="form-control" name="newPet.skill1" [(ngModel)]="newPet.skill1" placeholder="(Optional)">
+            </li>
+            <li><span>Skill 2:</span>        <input type="text" class="form-control" name="newPet.skill2" [(ngModel)]="newPet.skill2" placeholder="(Optional)">
+            </li>
+            <li><span>Skill 3:</span>        <input type="text" class="form-control" name="newPet.skill3" [(ngModel)]="newPet.skill3" placeholder="(Optional)">
+            </li>
+        </ul>
+        <button class="btn btn-primary">Add Pet</button>
+        <button class="btn btn-secondary" (click)="toPets()">Cancel</button>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+*{
+    margin:2%;
+    padding:5px;
+}
+.main{
+    width:50%;
+    display:inline-block;
+    text-align:center;
+}
+ul li{
+    list-style: none;
+}

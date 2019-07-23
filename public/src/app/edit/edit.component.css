@@ -1,0 +1,23 @@
+form button{
+    margin: 0 10px;
+}
+form input {
+    margin: 10px;
+}
+.main{
+    display:inline-block;
+    text-align:left;
+    width:75%;
+    padding:2%;
+}
+
+.validation{
+    color:red;
+}
+ul li{
+    list-style: none;
+}
+.main{
+    width:60%;
+    display:inline-block;
+}

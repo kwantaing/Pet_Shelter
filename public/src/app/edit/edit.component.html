@@ -1,0 +1,31 @@
+<div class="main">
+        <h2>Edit this pet</h2>
+        <div  *ngIf="errors" class="errors">
+            <p class="validation" *ngIf="errors.name">{{errors.name.message}}</p>
+            <p class="validation" *ngIf="errors.type">{{errors.type.message}}</p>
+            <p class="validation" *ngIf="errors.description">{{errors.description.message}}</p>
+        </div>
+        <form (submit)="onEdit(editPet)">
+            <span>Pet name:<br></span>
+            <span class=" validation" *ngIf="name.pristine==false && name.errors">Please enter a valid pet name with at least 3 characters</span>
+            <input type="text" class="form-control" name="editPet.name" [(ngModel)]="editPet.name" required minlength="3" #name="ngModel" value={{editPet.name}}>
+            <span>Pet type:<br></span>
+            <span class=" validation" *ngIf="type.pristine==false && type.errors">Please enter a pet type with at least 3 characters</span>
+            <input type="text" class="form-control" name="editPet.type" [(ngModel)]="editPet.type" required minlength="3" #type="ngModel">
+
+            <span>Description:<br></span>
+            <span class=" validation" *ngIf="description.pristine==false && description.errors">Please enter a description with at least 3 characters</span>
+            <input type="text" class="form-control" name="editPet.description" [(ngModel)]="editPet.description" required minlength="3" #description="ngModel">
+            <span>Skills</span>
+            <ul>
+                <li><span>Skill 1:</span>        <input type="text" class="form-control" name="editPet.skill1" [(ngModel)]="editPet.skill1" >
+                </li>
+                <li><span>Skill 2:</span>        <input type="text" class="form-control" name="editPet.skill2" [(ngModel)]="editPet.skill2">
+                </li>
+                <li><span>Skill 3:</span>        <input type="text" class="form-control" name="editPet.skill3" [(ngModel)]="editPet.skill3">
+                </li>
+            </ul>
+            <button class="btn btn-primary">Edit Pet</button>
+            <button class="btn btn-secondary" [routerLink]="['/pets']">Cancel</button>
+        </form>
+    </div>

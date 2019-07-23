@@ -1,0 +1,20 @@
+<div class="main">
+    <h2>Details about {{pet.name}}</h2>
+    <hr>
+    <div class="details"> 
+        <h3>Pet Type:</h3> <span>{{pet.type}}</span>
+        <h3>Skills</h3>
+        <ul>
+            <li *ngIf="(pet.skill1)">{{pet.skill1}}</li>
+            <li *ngIf="(pet.skill2)">{{pet.skill2}}</li>
+            <li *ngIf="(pet.skill3)">{{pet.skill3}}</li>
+        </ul>
+        <h3>Likes:</h3> <span>{{pet.likes}}</span>
+    </div>
+
+    <div class="actions">
+        <button *ngIf="liked==true" disabled="disabled" class="btn btn-secondary">Liked this Pet</button>
+        <button *ngIf="liked==false" (click)="likePet()" class="btn btn-secondary">Like this Pet</button>
+        <button (click)="adoptPet()" class="btn btn-secondary">Adopt this Pet!</button>
+    </div>
+</div>

@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/quentin/Desktop/Coding_Dojo/BeltExams/MEAN/MEANbelt_v2/public/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/quentin/Desktop/Coding_Dojo/BeltExams/MEAN/Pet_Shelter/public/src/styles.css */"./src/styles.css");
 
 
 /***/ })
